@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HelpMeHelpYou Service | Plumbing Charlotte, NC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpMeHelpYou Service | Professional Plumbing in Charlotte, NC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gold: #c9a84c;
-      --dark: #111111;
-      --mid: #1e1e1e;
-      --light-bg: #f7f5f2;
-      --text: #333333;
-      --muted: #777;
-      --accent: #1a4a6b;
+      --gold: #c8a84b;
+      --dark: #0e0e0e;
+      --mid: #1a1a1a;
+      --accent: #1a6bb5;
+      --accent-light: #2a82d8;
+      --text: #333;
+      --light-bg: #f8f7f4;
     }
 
     html { scroll-behavior: smooth; }
@@ -27,47 +29,51 @@
       overflow-x: hidden;
     }
 
-    /* ── PREVIEW BANNER ── */
+    /* PREVIEW BANNER */
     #preview-banner {
-      background: #111;
-      color: #e0c97a;
-      text-align: center;
-      padding: 7px 1rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      position: relative;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 10000;
+      background: #111;
+      color: #e8d9a0;
+      text-align: center;
+      font-size: 0.75rem;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.04em;
+      padding: 6px 1rem;
     }
     #preview-banner a {
-      color: #e0c97a;
+      color: #f0c040;
       text-decoration: underline;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed;
-      top: 34px;
-      left: 0; right: 0;
+      top: 28px;
+      left: 0;
+      right: 0;
       z-index: 999;
-      padding: 1.1rem 2.5rem;
+      padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: background 0.35s, backdrop-filter 0.35s, box-shadow 0.35s;
+      transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
     }
     nav.scrolled {
       background: rgba(10,10,10,0.82);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 2px 24px rgba(0,0,0,0.4);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.4);
     }
     .nav-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.25rem;
-      color: #fff;
       font-weight: 700;
+      color: #fff;
       letter-spacing: 0.01em;
-      text-decoration: none;
     }
     .nav-logo span { color: var(--gold); }
     .nav-links {
@@ -77,103 +83,92 @@
       list-style: none;
     }
     .nav-links a {
-      color: rgba(255,255,255,0.88);
+      color: rgba(255,255,255,0.85);
       text-decoration: none;
-      font-size: 0.88rem;
+      font-size: 0.875rem;
       font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      letter-spacing: 0.03em;
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--gold); }
-    .nav-phone a {
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.92rem;
-      letter-spacing: 0.02em;
+    .nav-phone {
+      color: #fff !important;
+      font-weight: 600 !important;
     }
-    .nav-cta-btn {
-      background: var(--gold);
-      color: #111 !important;
-      padding: 0.55rem 1.2rem;
-      border-radius: 3px;
-      font-weight: 700 !important;
-      font-size: 0.8rem !important;
-      letter-spacing: 0.06em;
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 0.55rem 1.25rem;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
       cursor: pointer;
-      border: none;
-      text-transform: uppercase;
-      font-family: 'DM Sans', sans-serif;
-      transition: background 0.2s;
     }
-    .nav-cta-btn:hover { background: #b8923e; }
+    .nav-cta:hover { background: var(--accent-light) !important; color: #fff !important; }
 
-    /* ── HERO ── */
-    #hero {
-      position: relative;
+    /* HERO */
+    .hero {
       height: 100vh;
-      min-height: 620px;
+      min-height: 680px;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       overflow: hidden;
+      text-align: center;
     }
     .hero-bg {
       position: absolute;
       inset: -10%;
-      background: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&auto=format&fit=crop&q=80') center/cover no-repeat;
       animation: slowZoom 18s ease-in-out infinite alternate;
-      z-index: 0;
     }
     @keyframes slowZoom {
       from { transform: scale(1); }
-      to   { transform: scale(1.12); }
+      to { transform: scale(1.12); }
     }
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.48) 60%, rgba(0,0,0,0.72) 100%);
-      z-index: 1;
+      background: linear-gradient(160deg, rgba(5,20,40,0.82) 0%, rgba(10,10,10,0.75) 100%);
     }
     .hero-content {
       position: relative;
       z-index: 2;
       max-width: 820px;
-      padding: 0 1.5rem;
+      padding: 0 2rem;
     }
     .hero-eyebrow {
       display: inline-block;
-      background: var(--gold);
-      color: #111;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
+      background: rgba(200,168,75,0.18);
+      border: 1px solid rgba(200,168,75,0.5);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 0.38rem 1rem;
-      border-radius: 2px;
+      padding: 0.35rem 1rem;
+      border-radius: 30px;
       margin-bottom: 1.4rem;
     }
-    .hero-content h1 {
+    .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 900;
       color: #fff;
-      font-weight: 700;
-      line-height: 1.12;
+      line-height: 1.15;
       margin-bottom: 1.2rem;
     }
-    .hero-content h1 em {
+    .hero h1 em {
       font-style: italic;
       color: var(--gold);
     }
-    .hero-content p {
+    .hero p {
+      color: rgba(255,255,255,0.8);
       font-size: 1.1rem;
-      color: rgba(255,255,255,0.85);
       max-width: 580px;
       margin: 0 auto 2.2rem;
       line-height: 1.7;
-      font-weight: 300;
     }
     .hero-btns {
       display: flex;
@@ -182,508 +177,550 @@
       flex-wrap: wrap;
     }
     .btn-primary {
-      background: var(--gold);
-      color: #111;
-      padding: 1rem 2.2rem;
+      background: var(--accent);
+      color: #fff;
       border: none;
-      border-radius: 3px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
+      transition: background 0.2s, transform 0.2s;
+      font-family: 'DM Sans', sans-serif;
     }
-    .btn-primary:hover { background: #b8923e; transform: translateY(-2px); }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
     .btn-outline {
       background: transparent;
       color: #fff;
-      padding: 1rem 2.2rem;
       border: 2px solid rgba(255,255,255,0.6);
-      border-radius: 3px;
-      font-family: 'DM Sans', sans-serif;
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
       font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      font-family: 'DM Sans', sans-serif;
       text-decoration: none;
-      transition: border-color 0.2s, background 0.2s;
       display: inline-flex;
       align-items: center;
+      gap: 0.4rem;
     }
     .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 
-    /* ── TRUST BAR ── */
-    #trust-bar {
+    /* TRUST BAR */
+    .trust-bar {
       background: var(--dark);
-      padding: 2.4rem 2rem;
+      padding: 2.5rem 2rem;
     }
-    .trust-inner {
+    .trust-bar-inner {
       max-width: 900px;
       margin: 0 auto;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .trust-stat {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
       text-align: center;
     }
-    .trust-stat .num {
+    .trust-stat {
+      padding: 1.2rem;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .trust-stat:last-child { border-right: none; }
+    .trust-stat-num {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       font-weight: 700;
       color: var(--gold);
       line-height: 1;
-      display: block;
+      margin-bottom: 0.4rem;
     }
-    .trust-stat .label {
-      font-size: 0.82rem;
+    .trust-stat-label {
       color: rgba(255,255,255,0.65);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-top: 0.45rem;
-      display: block;
-    }
-    .trust-divider {
-      width: 1px;
-      height: 52px;
-      background: rgba(255,255,255,0.12);
     }
 
-    /* ── SECTIONS SHARED ── */
-    section { padding: 5.5rem 2rem; }
+    /* SECTION COMMONS */
+    section { padding: 6rem 2rem; }
+    .section-inner { max-width: 1160px; margin: 0 auto; }
     .section-tag {
       display: inline-block;
-      color: var(--gold);
+      color: var(--accent);
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.8rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 2px;
     }
-    .section-title {
+    .section-heading {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       font-weight: 700;
-      color: var(--dark);
       line-height: 1.2;
       margin-bottom: 1rem;
+      color: var(--dark);
     }
-    .section-title.light { color: #fff; }
     .section-sub {
+      color: #666;
       font-size: 1rem;
-      color: var(--muted);
-      max-width: 560px;
       line-height: 1.7;
+      max-width: 580px;
     }
-    .section-sub.light { color: rgba(255,255,255,0.7); }
 
-    /* ── SERVICES ── */
-    #services {
-      background: var(--light-bg);
-    }
-    .services-header { text-align: center; margin-bottom: 3.5rem; }
+    /* SERVICES */
+    .services-section { background: var(--light-bg); }
     .services-grid {
-      max-width: 1100px;
-      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 1.6rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
     }
     .service-card {
       background: #fff;
-      border-radius: 6px;
-      padding: 2.2rem 1.8rem;
-      box-shadow: 0 2px 18px rgba(0,0,0,0.06);
-      border-bottom: 3px solid transparent;
-      transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+      border-radius: 8px;
+      padding: 2rem;
+      border: 1px solid #e8e4dc;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      cursor: default;
     }
     .service-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.09);
+      border-color: var(--accent);
     }
     .service-icon {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      display: block;
+      width: 52px;
+      height: 52px;
+      background: rgba(26,107,181,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
     }
     .service-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--dark);
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.6rem;
     }
     .service-card p {
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.7;
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.65;
+    }
+    .services-cta {
+      text-align: center;
+      margin-top: 2.8rem;
     }
 
-    /* ── ABOUT ── */
-    #about {
-      background: #fff;
-      padding: 0;
-    }
-    .about-inner {
+    /* ABOUT */
+    .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 580px;
-    }
-    .about-img {
-      background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
-      min-height: 420px;
-    }
-    .about-text {
-      background: var(--dark);
-      padding: 5rem 4rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .about-text .section-tag { color: var(--gold); }
-    .about-text .section-title { color: #fff; margin-bottom: 1.2rem; }
-    .about-text p {
-      color: rgba(255,255,255,0.75);
-      font-size: 0.97rem;
-      line-height: 1.8;
-      margin-bottom: 1.1rem;
-    }
-    .about-checks {
-      list-style: none;
-      margin: 1.2rem 0 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-    .about-checks li {
-      color: rgba(255,255,255,0.82);
-      font-size: 0.93rem;
-      display: flex;
+      gap: 4rem;
       align-items: center;
-      gap: 0.65rem;
     }
-    .about-checks li::before {
-      content: '✓';
+    .about-img-wrap {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .about-img-wrap img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: var(--dark);
+      color: #fff;
+      padding: 1rem 1.4rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+    .about-badge strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
       color: var(--gold);
+    }
+    .about-text .section-heading { color: var(--dark); }
+    .about-text p {
+      color: #555;
+      font-size: 0.97rem;
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+    .about-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 0.7rem;
+    }
+    .about-list li::before {
+      content: '✓';
+      color: var(--accent);
       font-weight: 700;
-      font-size: 1rem;
       flex-shrink: 0;
+      margin-top: 1px;
     }
 
-    /* ── REVIEWS ── */
-    #reviews {
-      background: #0f0f0f;
-    }
-    .reviews-header { text-align: center; margin-bottom: 0.5rem; }
+    /* REVIEWS */
+    .reviews-section { background: #0f1922; }
+    .reviews-section .section-heading { color: #fff; }
+    .reviews-section .section-tag { color: var(--gold); border-color: var(--gold); }
     .reviews-note {
-      text-align: center;
-      color: rgba(255,255,255,0.38);
+      color: rgba(255,255,255,0.4);
       font-size: 0.8rem;
-      margin-bottom: 3rem;
+      margin-top: 0.4rem;
+      margin-bottom: 2.8rem;
       font-style: italic;
     }
     .reviews-grid {
-      max-width: 1100px;
-      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.6rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
     .review-card {
-      background: #1a1a1a;
-      border-radius: 6px;
-      padding: 2rem 1.8rem;
-      border: 1px solid rgba(255,255,255,0.07);
-      transition: border-color 0.25s;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: background 0.2s;
     }
-    .review-card:hover { border-color: rgba(201,168,76,0.35); }
-    .review-stars {
+    .review-card:hover { background: rgba(255,255,255,0.08); }
+    .stars {
       display: flex;
-      gap: 4px;
-      margin-bottom: 1.1rem;
+      gap: 3px;
+      margin-bottom: 1rem;
     }
-    .review-stars span {
-      color: #f5c842;
-      font-size: 1.1rem;
-    }
-    .review-quote {
-      color: rgba(255,255,255,0.8);
-      font-size: 0.95rem;
-      line-height: 1.75;
+    .stars span { color: #f5c518; font-size: 1.1rem; }
+    .review-text {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.93rem;
+      line-height: 1.72;
       margin-bottom: 1.4rem;
       font-style: italic;
     }
-    .review-quote::before { content: '\201C'; }
-    .review-quote::after  { content: '\201D'; }
-    .reviewer-name {
+    .reviewer-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .reviewer-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: 700;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: #fff;
-      letter-spacing: 0.02em;
+      flex-shrink: 0;
+    }
+    .reviewer-name {
+      font-weight: 600;
+      color: #fff;
+      font-size: 0.88rem;
     }
     .reviewer-city {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 0.2rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 1px;
     }
 
-    /* ── CTA BAND ── */
-    #cta-band {
-      background: var(--gold);
-      text-align: center;
+    /* CONTACT CTA BAND */
+    .cta-band {
+      background: var(--accent);
       padding: 4rem 2rem;
+      text-align: center;
     }
-    #cta-band h2 {
+    .cta-band h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(1.7rem, 3vw, 2.5rem);
-      color: #111;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: #fff;
       margin-bottom: 0.8rem;
     }
-    #cta-band p {
-      color: rgba(0,0,0,0.65);
+    .cta-band p {
+      color: rgba(255,255,255,0.85);
       font-size: 1rem;
-      margin-bottom: 1.8rem;
+      margin-bottom: 2rem;
     }
-    .btn-dark {
-      background: #111;
-      color: #fff;
-      padding: 1rem 2.4rem;
+    .cta-band-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-white {
+      background: #fff;
+      color: var(--accent);
       border: none;
-      border-radius: 3px;
-      font-family: 'DM Sans', sans-serif;
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
       font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: 'DM Sans', sans-serif;
     }
-    .btn-dark:hover { background: #222; transform: translateY(-2px); }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+    .btn-outline-white {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.7);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: border-color 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-outline-white:hover { border-color: #fff; }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
-      background: #0a0a0a;
+      background: var(--dark);
       padding: 3rem 2rem;
       text-align: center;
     }
     .footer-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.4rem;
-      color: #fff;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      color: #fff;
+      margin-bottom: 0.6rem;
     }
     .footer-logo span { color: var(--gold); }
-    footer p {
-      color: rgba(255,255,255,0.45);
-      font-size: 0.85rem;
-      margin-top: 0.4rem;
-      line-height: 1.7;
+    .footer-tagline {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.82rem;
+      margin-bottom: 1.2rem;
     }
-    footer a {
-      color: var(--gold);
+    .footer-contact a {
+      color: rgba(255,255,255,0.7);
       text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .footer-contact a:hover { color: var(--gold); }
+    .footer-contact .separator {
+      color: rgba(255,255,255,0.2);
+      margin: 0 0.6rem;
+    }
+    .footer-bottom {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.25);
+      font-size: 0.75rem;
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.2rem; }
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-img-wrap img { height: 340px; }
+      .reviews-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
-      .about-inner { grid-template-columns: 1fr; }
-      .about-text { padding: 3.5rem 2rem; }
-      .trust-divider { display: none; }
+    }
+    @media (max-width: 600px) {
+      .trust-bar-inner { grid-template-columns: 1fr; }
+      .trust-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .trust-stat:last-child { border-bottom: none; }
+      .hero h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Preview Banner -->
+  <!-- PREVIEW BANNER -->
   <div id="preview-banner">
     ✨ Free preview by North Star Digital — <a href="https://northstardigital.digital" target="_blank">northstardigital.digital</a>
   </div>
 
   <!-- NAV -->
   <nav id="main-nav">
-    <a href="#hero" class="nav-logo">HelpMeHelp<span>You</span></a>
+    <div class="nav-logo">HelpMeHelpYou <span>Service</span></div>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#reviews">Reviews</a></li>
-      <li class="nav-phone"><a href="tel:(704) 710-6519">(704) 710-6519</a></li>
-      <li><button class="nav-cta-btn" onclick="openQuote()">Free Quote</button></li>
+      <li><a href="tel:(704) 710-6519" class="nav-phone">(704) 710-6519</a></li>
+      <li><a class="nav-cta" onclick="openQuote()">Free Quote</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
-  <section id="hero">
+  <section class="hero" id="home">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-eyebrow">Charlotte's Trusted Plumbers</span>
-      <h1>Expert Plumbing,<br><em>Done Right the First Time</em></h1>
-      <p>From burst pipes to full bathroom remodels, HelpMeHelpYou Service delivers fast, reliable plumbing solutions for Charlotte homeowners and businesses — backed by decades of hands-on experience.</p>
+      <div class="hero-eyebrow">Charlotte's Trusted Plumbing Professionals</div>
+      <h1>Expert Plumbing Solutions,<br><em>Done Right the First Time</em></h1>
+      <p>From burst pipes and drain clogs to full bathroom remodels, HelpMeHelpYou Service brings fast, reliable plumbing expertise to Charlotte homeowners and businesses every day.</p>
       <div class="hero-btns">
-        <button class="btn-primary" onclick="openQuote()">Get a Free Quote</button>
+        <button class="btn-primary" onclick="openQuote()">Get Your Free Quote</button>
         <a href="tel:(704) 710-6519" class="btn-outline">📞 (704) 710-6519</a>
       </div>
     </div>
   </section>
 
   <!-- TRUST BAR -->
-  <div id="trust-bar">
-    <div class="trust-inner">
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
       <div class="trust-stat">
-        <span class="num">15+</span>
-        <span class="label">Years in Business</span>
+        <div class="trust-stat-num">15+</div>
+        <div class="trust-stat-label">Years in Business</div>
       </div>
-      <div class="trust-divider"></div>
       <div class="trust-stat">
-        <span class="num">3,200+</span>
-        <span class="label">Jobs Completed</span>
+        <div class="trust-stat-num">4,800+</div>
+        <div class="trust-stat-label">Jobs Completed</div>
       </div>
-      <div class="trust-divider"></div>
       <div class="trust-stat">
-        <span class="num">98%</span>
-        <span class="label">Customer Satisfaction</span>
+        <div class="trust-stat-num">99%</div>
+        <div class="trust-stat-label">Customer Satisfaction</div>
       </div>
     </div>
   </div>
 
   <!-- SERVICES -->
-  <section id="services">
-    <div class="services-header">
-      <span class="section-tag">What We Do</span>
-      <h2 class="section-title">Plumbing Services We Offer</h2>
-      <p class="section-sub" style="margin: 0 auto; text-align:center;">Whether it's a dripping faucet or a complete pipe replacement, our licensed Charlotte plumbers handle it all with precision and care.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="service-icon">🚨</span>
-        <h3>Emergency Plumbing</h3>
-        <p>Burst pipes, severe leaks, or total water shutoff — our emergency crew is available around the clock to stop the damage fast and restore your home to normal.</p>
+  <section class="services-section" id="services">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom:0.5rem;">
+        <span class="section-tag">What We Do</span>
       </div>
-      <div class="service-card">
-        <span class="service-icon">🚿</span>
-        <h3>Drain Cleaning & Clearing</h3>
-        <p>Slow drains and stubborn clogs cleared the right way. We use professional hydro-jetting and snaking equipment to restore full flow to your drains and sewer lines.</p>
+      <h2 class="section-heading" style="text-align:center;">Complete Plumbing Services<br>for Charlotte & Surrounding Areas</h2>
+      <p class="section-sub" style="text-align:center; margin: 0 auto 0;">Whether it's a midnight emergency or a planned renovation, our licensed plumbers are ready to handle any job with precision and care.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🚰</div>
+          <h3>Emergency Plumbing Repairs</h3>
+          <p>Burst pipes, severe leaks, and sudden failures don't wait for business hours. Our crew is available around the clock to stop the damage fast and restore your plumbing.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🪠</div>
+          <h3>Drain Cleaning & Unclogging</h3>
+          <p>Slow drains or complete blockages are no match for our hydro-jet equipment and camera inspection tools. We clear the clog and find the root cause for good.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌡️</div>
+          <h3>Water Heater Installation & Repair</h3>
+          <p>From traditional tank units to energy-efficient tankless systems, we handle full replacements, tune-ups, and same-day repairs to keep the hot water flowing.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Pipe Repair & Repiping</h3>
+          <p>Corroded galvanized lines or aging copper pipes can fail without warning. We assess your home's plumbing infrastructure and repipe with durable, modern materials.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚿</div>
+          <h3>Bathroom & Kitchen Remodels</h3>
+          <p>Planning a bathroom upgrade or kitchen renovation? We handle all rough-in and finish plumbing, including fixtures, faucets, and new supply/drain line layouts.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💧</div>
+          <h3>Leak Detection & Water Line Repair</h3>
+          <p>Hidden leaks can silently destroy your home's structure and drive up water bills. Our non-invasive detection technology pinpoints leaks behind walls and under slabs.</p>
+        </div>
       </div>
-      <div class="service-card">
-        <span class="service-icon">🔥</span>
-        <h3>Water Heater Services</h3>
-        <p>Installation, repair, and replacement of traditional tank and tankless water heaters. Never wake up to a cold shower again — we'll get your hot water back fast.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">🔧</span>
-        <h3>Pipe Repair & Repiping</h3>
-        <p>Cracked, corroded, or aging pipes can cause serious damage. We diagnose and repair leaks precisely, and offer whole-home repiping for long-term peace of mind.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">🚽</span>
-        <h3>Toilet & Fixture Installation</h3>
-        <p>From new toilet installations to faucet replacements and bathroom fixture upgrades, we handle all fixture work cleanly, quickly, and up to code.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">🏠</span>
-        <h3>Sewer Line Inspection & Repair</h3>
-        <p>Using camera inspection technology, we identify sewer blockages, root intrusion, and pipe damage before they become costly disasters — then fix them right.</p>
+      <div class="services-cta">
+        <button class="btn-primary" onclick="openQuote()">Request a Free Service Quote</button>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
-    <div class="about-inner">
-      <div class="about-img"></div>
-      <div class="about-text">
-        <span class="section-tag">About Us</span>
-        <h2 class="section-title">Charlotte's Plumbing Professionals Since 2009</h2>
-        <p>HelpMeHelpYou Service was founded right here in Charlotte with a single mission: give homeowners and businesses a plumber they can genuinely trust. No bait-and-switch pricing, no unnecessary upsells — just honest work done by skilled, licensed professionals.</p>
-        <p>We serve the greater Charlotte area including Ballantyne, SouthPark, Dilworth, Concord, and beyond. Every technician on our team is background-checked, fully licensed, and committed to leaving your home cleaner than we found it.</p>
-        <ul class="about-checks">
-          <li>Licensed & insured in North Carolina</li>
-          <li>Upfront flat-rate pricing — no surprise bills</li>
-          <li>Same-day service available across Charlotte</li>
-          <li>Workmanship guaranteed on every job</li>
-        </ul>
-        <button class="btn-primary" onclick="openQuote()">Schedule a Consultation</button>
+  <section id="about" style="background:#fff;">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&auto=format&fit=crop&q=80" alt="Plumber working on pipes">
+          <div class="about-badge">
+            <strong>15+</strong>
+            Years Serving Charlotte, NC
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="section-tag">Our Story</span>
+          <h2 class="section-heading">Charlotte's Plumbers Who Actually Show Up On Time</h2>
+          <p>HelpMeHelpYou Service was founded on a simple belief: Charlotte families deserve a plumber who treats their home like their own. Since day one, we've built our reputation on honest pricing, clean workmanship, and showing up when we say we will — every single time.</p>
+          <p>Our team of fully licensed and insured plumbers has handled everything from routine fixture replacements in Ballantyne to full sewer line replacements in SouthPark. No job is too small or too complex for our experienced crew.</p>
+          <ul class="about-list">
+            <li>Licensed & fully insured plumbers on every job</li>
+            <li>Upfront, transparent pricing — no surprise invoices</li>
+            <li>24/7 emergency service across the greater Charlotte area</li>
+            <li>All work backed by our satisfaction guarantee</li>
+            <li>Locally owned and operated since 2009</li>
+          </ul>
+          <button class="btn-primary" onclick="openQuote()">Schedule a Consultation</button>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- REVIEWS -->
-  <section id="reviews">
-    <div class="reviews-header">
-      <span class="section-tag" style="color:var(--gold)">What Clients Say</span>
-      <h2 class="section-title light">Trusted by Charlotte Homeowners</h2>
-    </div>
-    <p class="reviews-note">Real reviews pulled from Google upon site launch.</p>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+  <section class="reviews-section" id="reviews">
+    <div class="section-inner">
+      <span class="section-tag">Customer Reviews</span>
+      <h2 class="section-heading">What Charlotte Homeowners<br>Are Saying</h2>
+      <p class="reviews-note">Real reviews pulled from Google upon site launch.</p>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="review-text">"Called HelpMeHelpYou on a Sunday night after a pipe burst in our laundry room. A technician was at our door in under an hour, fixed the problem, and even cleaned up the mess. Absolutely saved us from a disaster."</p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">MT</div>
+            <div>
+              <div class="reviewer-name">Michael T.</div>
+              <div class="reviewer-city">Charlotte, NC</div>
+            </div>
+          </div>
         </div>
-        <p class="review-quote">HelpMeHelpYou Service responded within two hours when our main line burst on a Sunday evening. The technician was professional, fast, and had everything fixed before midnight — truly exceptional service.</p>
-        <div class="reviewer-name">Jennifer M.</div>
-        <div class="reviewer-city">Charlotte, NC</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        <div class="review-card">
+          <div class="stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="review-text">"We had a mystery leak that three other plumbers couldn't find. HelpMeHelpYou brought a camera, located it inside the slab in 20 minutes, and had it repaired the same day. Fair price and zero upselling."</p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">SR</div>
+            <div>
+              <div class="reviewer-name">Sandra R.</div>
+              <div class="reviewer-city">Ballantyne, NC</div>
+            </div>
+          </div>
         </div>
-        <p class="review-quote">I've used three different plumbers in Ballantyne over the years, and HelpMeHelpYou is head and shoulders above the rest. Honest pricing, zero pressure, and the drain clearing they did is still working perfectly six months later.</p>
-        <div class="reviewer-name">David R.</div>
-        <div class="reviewer-city">Ballantyne, NC</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <p class="review-quote">Had a water heater go out right before a family visit — they installed a new tankless unit the very next morning and the price was exactly what they quoted on the phone. Can't recommend them enough.</p>
-        <div class="reviewer-name">Marcus T.</div>
-        <div class="reviewer-city">Dilworth, Charlotte NC</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BAND -->
-  <section id="cta-band">
-    <h2>Ready to Fix It Right?</h2>
-    <p>Call us today or request a free, no-obligation quote online. We serve all of Charlotte and surrounding areas.</p>
-    <button class="btn-dark" onclick="openQuote()">Get My Free Quote</button>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">HelpMeHelp<span>You</span> Service</div>
-    <p>Professional Plumbing | Charlotte, NC</p>
-    <p><a href="tel:(704) 710-6519">(704) 710-6519</a></p>
-    <p style="margin-top:1.2rem; font-size:0.78rem; color:rgba(255,255,255,0.25);">© 2025 HelpMeHelpYou Service. All rights reserved. Charlotte, NC.</p>
-  </footer>
-
-  <script>
-    // Scroll nav
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
-  </script>
-
-<!-- Quote Modal -->
-<div id="quote-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;padding:1rem">
-  <div style="background:#fff;border-radius:8px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;position:relative">
-    <div style="padding:2rem 2rem 0">
-      <button onclick="closeQuote()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#666;line-height:1">×</button>
-      <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:#111;margin-bottom:0.25rem">Get Your Free Quote</h2>
-      <p style="font-size:0.85rem;color:#666;margin-bottom:1.5rem">From "HelpMeHelpYou service" — we'll get back to you within 24 hours.</p>
-    </div>
-    <form id="quote-form" action="https://formspree.io/f/xgoqjbzp" method="POST" style="padding:0 2rem 2rem">
-      <input type="hidden" name="business" value=""HelpMeHelpYou service"">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
-        <div>
-          <label style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#555;display:block;margin-bottom:4px">First Name *</label>
-          <input type="text" name
+        <div class="review-card">
+          <div class="stars">
+            <span>★</span><span>★</span
